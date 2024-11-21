@@ -31,4 +31,22 @@ fun PengelolaHalaman (
     modifier: Modifier = Modifier,
     viewModel: MahasiswaViewModel = viewModel(),
     navHost: NavHostController = rememberNavController()
-) {}
+) {
+    val uiState by viewModel.uiState.collectAsState()
+
+    NavHost(
+        navController = navHost, startDestination = Halaman.Formulir.name) {
+        composable(route = Halaman.Formulir.name) {
+            val konteks = LocalContext.current
+            FormMahasiswaView(
+                listJK = DataKelamin.listJK.map { id ->
+                    konteks.resources.getString(id)
+                },
+                onSubmitClicked = {
+                    viewModel.saveDataMahasiswa(it)
+                    navHost.navigate(Halaman.Detail.name)
+                }
+            )
+        }
+    }
+}
