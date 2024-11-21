@@ -24,4 +24,13 @@ fun DetailMahasiswaView(
         Pair("Alamat", uiStateMahasiswa.alamat),
         Pair("NIM", uiStateMahasiswa.nim),
     )
+
+    Column (){
+        listDataMhs.forEach { items ->
+            CardSection(
+                judulParam = items.first,
+                isiParam = items.second
+            )
+        }
     }
+}
