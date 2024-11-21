@@ -34,3 +34,17 @@ fun DetailMahasiswaView(
         }
     }
 }
+
+@Composable
+fun CardSection(judulParam:String, isiParam:String){
+    Column(
+        horizontalAlignment = Alignment.Start,
+    ){
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        )
+    }
+}
