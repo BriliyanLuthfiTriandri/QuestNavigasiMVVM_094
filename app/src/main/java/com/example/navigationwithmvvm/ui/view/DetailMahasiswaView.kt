@@ -17,39 +17,4 @@ fun DetailMahasiswaView(
     modifier: Modifier = Modifier,
     uiStateMahasiswa: DataMahasiswa,
 
-    ){
-    val listDataMhs = listOf(
-        Pair("Nama", uiStateMahasiswa.nama),
-        Pair("Gender", uiStateMahasiswa.gender),
-        Pair("Alamat", uiStateMahasiswa.alamat),
-        Pair("NIM", uiStateMahasiswa.nim),
     )
-
-    Column (){
-        listDataMhs.forEach { items ->
-            CardSection(
-                judulParam = items.first,
-                isiParam = items.second
-            )
-        }
-    }
-}
-
-@Composable
-fun CardSection(judulParam:String, isiParam:String){
-    Column(
-        horizontalAlignment = Alignment.Start,
-    ){
-        Row (
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
-        ){
-            Text(text= judulParam, modifier = Modifier.weight(0.8f))
-            Text(text= ":",modifier = Modifier.weight(0.2f))
-            Text(text= "$isiParam" , modifier = Modifier.weight(2f))
-        }
-
-    }
-}
