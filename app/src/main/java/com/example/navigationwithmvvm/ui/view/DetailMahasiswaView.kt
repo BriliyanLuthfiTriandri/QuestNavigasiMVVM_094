@@ -45,6 +45,10 @@ fun CardSection(judulParam:String, isiParam:String){
                 .fillMaxWidth()
                 .padding(8.dp),
             horizontalArrangement = Arrangement.SpaceBetween
-        )
+        ){
+            Text(text= judulParam, modifier = Modifier.weight(0.8f))
+            Text(text= ":",modifier = Modifier.weight(0.2f))
+            Text(text= "$isiParam" , modifier = Modifier.weight(2f))
+        }
     }
 }
